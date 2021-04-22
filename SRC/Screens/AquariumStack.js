@@ -1,11 +1,20 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import AquariumLanding from './AquariumLanding';
 
+const Stack = createStackNavigator();
 const AquariumStack = () => {
   return (
-    <View>
-      <Text>Aquarium</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="AquariumLanding"
+        component={AquariumLanding}
+        options={{
+          headerShown: true,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 

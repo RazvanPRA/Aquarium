@@ -7,18 +7,25 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import AquariumStack from './SRC/Screens/AquariumStack';
-import Converter from './SRC/Screens/Converter';
+import {NavigationContainer} from '@react-navigation/native';
+import AquariumCalculate from './SRC/Screens/AquariumCalculate';
+import AppTabs from './SRC/Screens/AppTabs';
 
 const Stack = createStackNavigator();
+
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Aquarium" component={AquariumStack} />
-        <Stack.Screen name="Convertor" component={Converter} />
+        <Stack.Screen
+          name="AppTabs"
+          component={AppTabs}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen name="AquariumCalculate" component={AquariumCalculate} />
       </Stack.Navigator>
     </NavigationContainer>
   );
