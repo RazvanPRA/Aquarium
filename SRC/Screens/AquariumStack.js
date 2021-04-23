@@ -11,7 +11,7 @@ const AquariumStack = () => {
         name="AquariumLanding"
         component={AquariumLanding}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
