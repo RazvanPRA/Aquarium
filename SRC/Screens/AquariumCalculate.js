@@ -1,9 +1,9 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 const AquariumCalculate = () => {
   return (
-    <View>
+    <View style={styles.body}>
       <Text>1</Text>
     </View>
   );
@@ -11,4 +11,9 @@ const AquariumCalculate = () => {
 
 export default AquariumCalculate;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  body: {
+    backgroundColor: '#1E1F18',
+    flex: 1,
+  },
+});

@@ -1,17 +1,20 @@
 import React from 'react';
 import {StyleSheet, Image, Pressable} from 'react-native';
 
-const ImageBtn = ({imgSource, navigation}) => {
+const ImageBtn = ({imgSource, onPress}) => {
   return (
-    <Pressable
-      onPress={() => {
-        navigation.navigate('AquariumCalculate');
-      }}>
-      <Image style={{height: 150, width: 150}} source={imgSource} />
+    <Pressable onPress={onPress}>
+      <Image style={styles.img} source={imgSource} />
     </Pressable>
   );
 };
 
 export default ImageBtn;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  img: {
+    height: 92,
+    width: 151,
+    borderRadius: 20,
+  },
+});

@@ -25,7 +25,11 @@ const App: () => React$Node = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen name="AquariumCalculate" component={AquariumCalculate} />
+        <Stack.Screen
+          options={{title: 'Cube'}}
+          name="AquariumCalculate"
+          component={AquariumCalculate}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
