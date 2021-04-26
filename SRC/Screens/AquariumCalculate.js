@@ -1,14 +1,11 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, Image} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 
 const AquariumCalculate = () => {
   return (
-    <Pressable>
-      <Image
-        style={{height: 150, width: 150}}
-        source={require('../Img/CubeSelected.png')}
-      />
-    </Pressable>
+    <View>
+      <Text>1</Text>
+    </View>
   );
 };
 

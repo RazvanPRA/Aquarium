@@ -1,25 +1,53 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
-import AquariumCalculate from './AquariumCalculate';
+import {StyleSheet, Text, View} from 'react-native';
+import ImageBtn from './ImageBtn';
 
 const AquariumLanding = ({navigation}) => {
   return (
     <View style={styles.body}>
       <View style={styles.grpBtn}>
-        <AquariumCalculate style={styles.body}></AquariumCalculate>
-        <AquariumCalculate
-          style={styles.body}
+        <ImageBtn
+          navigation={navigation}
           onPress={() => {
             navigation.navigate('AquariumCalculate');
-          }}></AquariumCalculate>
+          }}
+          imgSource={require('../Img/CubeSelected.png')}
+          style={styles.body}></ImageBtn>
+
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/HexagonCubeSelected.png')}
+          style={styles.body}></ImageBtn>
       </View>
       <View style={styles.grpBtn}>
-        <Text style={styles.btnCalculator}>3</Text>
-        <Text style={styles.btnCalculator}>4</Text>
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/PentagonalCubeSelected.png')}
+          style={styles.body}></ImageBtn>
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/TrigonalCubeSelected.png')}
+          style={styles.body}></ImageBtn>
       </View>
       <View style={styles.grpBtn}>
-        <Text style={styles.btnCalculator}>5</Text>
-        <Text style={styles.btnCalculator}>6</Text>
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/BowFrontCubeSelected.png')}
+          style={styles.body}></ImageBtn>
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/TriganolCube2Selected.png')}
+          style={styles.body}></ImageBtn>
+      </View>
+      <View style={styles.grpBtn}>
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/CylinderSelected.png')}
+          style={styles.body}></ImageBtn>
+        <ImageBtn
+          navigation={navigation}
+          imgSource={require('../Img/HalfCylinderSelected.png')}
+          style={styles.body}></ImageBtn>
       </View>
     </View>
   );
