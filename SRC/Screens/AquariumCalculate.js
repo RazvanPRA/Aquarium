@@ -1,10 +1,21 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useLayoutEffect} from 'react';
+import {StyleSheet, Text, View, Pressable} from 'react-native';
 
-const AquariumCalculate = () => {
+const AquariumCalculate = ({route, navigation}) => {
+  const {aquariumShape, title, handleCalculate} = route.params;
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: aquariumShape,
+    });
+  }, []);
   return (
     <View style={styles.body}>
-      <Text>1</Text>
+      <Pressable
+        onPress={() => {
+          handleCalculate({height: 5, lenght: 10, width: 20});
+        }}>
+        <Text>Calculate: </Text>
+      </Pressable>
     </View>
   );
 };
