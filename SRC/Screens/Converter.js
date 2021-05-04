@@ -22,13 +22,15 @@ const Converter = () => {
             <View style={styles.test}>
               <Button
                 style={styles.test}
-                title="OPEN BOTTOM SHEET"
+                title="OPEN"
                 onPress={() => refRBSheet.current.open()}
               />
               <RBSheet
+                style={style.btn}
                 ref={refRBSheet}
                 closeOnDragDown={true}
                 closeOnPressMask={true}
+                height={250}
                 customStyles={{
                   wrapper: {
                     backgroundColor: 'transparent',
@@ -144,18 +146,21 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
   },
+  btn: {},
   test: {
     marginBottom: 10,
     backgroundColor: '#04ECB5',
     width: 112,
     height: 26,
     alignSelf: 'center',
+    fontSize: 10,
   },
   test2: {
     backgroundColor: '#2D7842',
     width: 130,
     height: 20,
-    color: '#FFFFFF',
+    fontSize: 50,
+    color: '#000000',
   },
   arrow: {
     alignSelf: 'flex-start',
