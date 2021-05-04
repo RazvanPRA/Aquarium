@@ -26,7 +26,7 @@ const Converter = () => {
                 onPress={() => refRBSheet.current.open()}
               />
               <RBSheet
-                style={style.btn}
+                style={styles.btn}
                 ref={refRBSheet}
                 closeOnDragDown={true}
                 closeOnPressMask={true}
