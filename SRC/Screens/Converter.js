@@ -30,7 +30,7 @@ const Converter = () => {
                 ref={refRBSheet}
                 closeOnDragDown={true}
                 closeOnPressMask={true}
-                height={250}
+                height={200}
                 customStyles={{
                   wrapper: {
                     backgroundColor: 'transparent',
