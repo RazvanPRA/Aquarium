@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Pressable} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
 
 const AquariumCalculate = ({route, navigation}) => {
-  const {aquariumShape, title, handleCalculate} = route.params;
+  const {aquariumShape, handleCalculate} = route.params;
   useLayoutEffect(() => {
     navigation.setOptions({
       title: aquariumShape,
