@@ -13,7 +13,7 @@ const AppTabs = () => {
       tabBarOptions={{
         labelStyle: {fontSize: 18},
         style: {backgroundColor: COLORS.colorBackground},
-        labelStyle: {color: COLORS.firstColor},
+        labelStyle: {color: COLORS.primaryColor},
         tabStyle: {height: 94},
       }}>
       <Tab.Screen

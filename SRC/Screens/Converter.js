@@ -150,14 +150,14 @@ const styles = StyleSheet.create({
   btn: {},
   test: {
     marginBottom: 10,
-    backgroundColor: COLORS.secondColor,
+    backgroundColor: COLORS.secondaryColor,
     width: 112,
     height: 26,
     alignSelf: 'center',
     fontSize: 10,
   },
   test2: {
-    backgroundColor: COLORS.firstColor,
+    backgroundColor: COLORS.primaryColor,
     width: 130,
     height: 20,
     fontSize: 50,
