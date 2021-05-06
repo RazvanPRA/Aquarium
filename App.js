@@ -34,7 +34,14 @@ const App: () => React$Node = () => {
           options={{
             headerLeft: () => <CostumeBtn></CostumeBtn>,
             headerTintColor: COLORS.secondaryColor,
-            headerStyle: {backgroundColor: COLORS.colorBackground, height: 92},
+            headerStyle: {
+              backgroundColor: COLORS.colorBackground,
+              height: 92,
+            },
+            headerTitleStyle: {
+              fontSize: 18,
+              fontFamily: 'Roboto-italic',
+            },
             headerTitleAlign: 'center',
           }}
         />
