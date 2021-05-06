@@ -1,5 +1,6 @@
 import React, {useLayoutEffect} from 'react';
 import {StyleSheet, Text, View, Pressable} from 'react-native';
+import {COLORS} from '../Colors/COLORS';
 
 const AquariumCalculate = ({route, navigation}) => {
   const {aquariumShape, title, handleCalculate} = route.params;
@@ -24,7 +25,7 @@ export default AquariumCalculate;
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#1E1F18',
+    backgroundColor: COLORS.colorBackground,
     flex: 1,
   },
 });

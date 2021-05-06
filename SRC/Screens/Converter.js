@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import InputMetric from './InputMetric';
+import {COLORS} from '../Colors/COLORS';
 
 const Converter = () => {
   const [number, onChangeNumber] = React.useState(null);
@@ -131,36 +132,36 @@ export default Converter;
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    backgroundColor: '#1E1F18',
+    backgroundColor: COLORS.colorBackground,
     alignItems: 'center',
   },
   body2: {
-    backgroundColor: '#1E1F18',
+    backgroundColor: COLORS.colorBackground,
     padding: 10,
     flexDirection: 'row',
     marginTop: 75,
     alignItems: 'center',
   },
   body3: {
-    backgroundColor: '#1E1F18',
+    backgroundColor: COLORS.colorBackground,
     padding: 10,
     alignItems: 'center',
   },
   btn: {},
   test: {
     marginBottom: 10,
-    backgroundColor: '#04ECB5',
+    backgroundColor: COLORS.secondColor,
     width: 112,
     height: 26,
     alignSelf: 'center',
     fontSize: 10,
   },
   test2: {
-    backgroundColor: '#2D7842',
+    backgroundColor: COLORS.firstColor,
     width: 130,
     height: 20,
     fontSize: 50,
-    color: '#000000',
+    color: '#FFFFFF',
   },
   arrow: {
     alignSelf: 'flex-start',
