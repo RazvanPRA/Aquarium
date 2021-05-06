@@ -12,7 +12,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import AquariumCalculate from './SRC/Screens/AquariumCalculate';
 import AppTabs from './SRC/Screens/AppTabs';
 import {StyleSheet, Text, View, Pressable} from 'react-native';
-import CostumeBtn from './SRC/Components/CostumeBtn';
+import CustomBtn from './SRC/Components/CustomBtn';
 import {COLORS} from './SRC/Colors/COLORS';
 
 const Stack = createStackNavigator();
@@ -32,7 +32,7 @@ const App: () => React$Node = () => {
           name="AquariumCalculate"
           component={AquariumCalculate}
           options={{
-            headerLeft: () => <CostumeBtn></CostumeBtn>,
+            headerLeft: () => <CustomBtn></CustomBtn>,
             headerTintColor: COLORS.secondaryColor,
             headerStyle: {
               backgroundColor: COLORS.colorBackground,
