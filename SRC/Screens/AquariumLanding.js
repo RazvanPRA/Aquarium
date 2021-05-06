@@ -2,6 +2,8 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import ImageBtn from './ImageBtn';
 import {geometricBtn} from '../Constants/GeometricBtn';
+import {COLORS} from '../Colors/COLORS';
+
 const AquariumLanding = ({navigation}) => {
   return (
     <View style={styles.body}>
@@ -100,7 +102,7 @@ export default AquariumLanding;
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#1E1F18',
+    backgroundColor: COLORS.colorBackground,
     flex: 1,
   },
   grpBtn: {

@@ -4,6 +4,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {HeaderBackButton} from '@react-navigation/stack';
 import AquariumLanding from './AquariumLanding';
 import Converter from './Converter';
+import {COLORS} from '../Colors/COLORS';
 
 const Tab = createMaterialTopTabNavigator();
 const AppTabs = () => {
@@ -11,8 +12,8 @@ const AppTabs = () => {
     <Tab.Navigator
       tabBarOptions={{
         labelStyle: {fontSize: 18},
-        style: {backgroundColor: '#1E1F18'},
-        labelStyle: {color: '#2D7842'},
+        style: {backgroundColor: COLORS.colorBackground},
+        labelStyle: {color: COLORS.primaryColor},
         tabStyle: {height: 94},
       }}>
       <Tab.Screen
