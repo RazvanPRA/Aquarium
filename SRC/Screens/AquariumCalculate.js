@@ -13,21 +13,7 @@ const AquariumCalculate = ({route, navigation}) => {
   }, []);
   return (
     <View style={styles.body}>
-      {isEnabled ? (
-        <Text style={styles.isFalse}>Metric</Text>
-      ) : (
-        <Text style={styles.isTrue}>Metric</Text>
-      )}
-      <UnitSwitch
-        style={styles.switchBtn}
-        setIsEnabled={setIsEnabled}
-        isEnabled={isEnabled}
-      />
-      {isEnabled ? (
-        <Text style={styles.isTrue}>Imperial</Text>
-      ) : (
-        <Text style={styles.isFalse}>Imperial</Text>
-      )}
+      <UnitSwitch setIsEnabled={setIsEnabled} isEnabled={isEnabled} />
     </View>
   );
 };
@@ -40,15 +26,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'row',
-  },
-  isTrue: {
-    color: COLORS.secondaryColor,
-    fontSize: 18,
-    fontFamily: 'Roboto-italic',
-  },
-  isFalse: {
-    color: COLORS.secondaryColor,
-    fontSize: 18,
-    fontFamily: 'Roboto-regular',
   },
 });
