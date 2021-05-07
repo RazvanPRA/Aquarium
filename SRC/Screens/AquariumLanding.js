@@ -17,6 +17,7 @@ const AquariumLanding = ({navigation}) => {
                 navigation.navigate('AquariumCalculate', {
                   aquariumShape: btn.aquariumShape,
                   handleCalculate: btn.handleCalculate,
+                  formulaImgSource: btn.formulaImgSource,
                 });
               }}
               imgSource={btn.imgSource}

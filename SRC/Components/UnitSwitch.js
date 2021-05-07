@@ -34,7 +34,6 @@ export default UnitSwitch;
 const styles = StyleSheet.create({
   switchBtn: {
     backgroundColor: COLORS.colorBackground,
-    flex: 1,
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'flex-start',

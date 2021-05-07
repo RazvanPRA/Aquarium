@@ -1,19 +1,24 @@
 import React, {useLayoutEffect, useState} from 'react';
-import {StyleSheet, Text, View, Pressable} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
 import UnitSwitch from '../Components/UnitSwitch';
+import GeometricImg from './GeometericImg';
 
 const AquariumCalculate = ({route, navigation}) => {
   const [isEnabled, setIsEnabled] = useState(false);
-  const {aquariumShape, handleCalculate} = route.params;
+  const {aquariumShape, formulaImgSource} = route.params;
   useLayoutEffect(() => {
     navigation.setOptions({
       title: aquariumShape,
     });
   }, []);
+  console.log({formulaImgSource});
   return (
     <View style={styles.body}>
       <UnitSwitch setIsEnabled={setIsEnabled} isEnabled={isEnabled} />
+      <View style={styles.img}>
+        <GeometricImg formulaImgSource={formulaImgSource}></GeometricImg>
+      </View>
     </View>
   );
 };
@@ -24,7 +29,11 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: COLORS.colorBackground,
     flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  img: {
+    backgroundColor: COLORS.colorBackground,
+    height: 125,
+    marginTop: 20,
   },
 });
