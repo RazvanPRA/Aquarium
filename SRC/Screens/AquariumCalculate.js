@@ -30,7 +30,6 @@ const AquariumCalculate = ({route, navigation}) => {
       />
       <View style={styles.img}>
         <GeometricImg formulaImgSource={formulaImgSource}></GeometricImg>
-        <Text>{activeUnit}</Text>
       </View>
     </View>
   );

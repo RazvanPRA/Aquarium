@@ -28,6 +28,11 @@ const UnitBtn = ({isActive, units, selectedUnit, setSelectedUnit, title}) => {
           draggableIcon: {
             backgroundColor: COLORS.primaryColor,
           },
+          container: {
+            backgroundColor: COLORS.primaryColor,
+            borderTopEndRadius: 30,
+            borderTopStartRadius: 30,
+          },
         }}>
         <View style={styles.bottomSheetContainer}>
           {units &&
