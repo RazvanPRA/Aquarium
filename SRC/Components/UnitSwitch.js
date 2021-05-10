@@ -1,30 +1,54 @@
-import React from 'react';
-import {StyleSheet, Text, View, Switch} from 'react-native';
+import React, {useRef, useState} from 'react';
+import {StyleSheet, Text, View, Switch, Pressable, Image} from 'react-native';
+import RBSheet from 'react-native-raw-bottom-sheet';
 import {COLORS} from '../Colors/COLORS';
+import UnitBtn from '../Screens/UnitBtn';
 
-const UnitSwitch = ({setIsEnabled, isEnabled}) => {
+const UnitSwitch = ({
+  isImperial,
+  setIsImperial,
+  unitMetric,
+  unitImperial,
+  setUnitMetric,
+  setUnitImperial,
+}) => {
+  const refRBSheetMetric = useRef();
+  const refRBSheetImperial = useRef();
   const toggleSwitch = () => {
-    setIsEnabled(!isEnabled);
+    setIsImperial(!isImperial);
   };
   return (
     <View style={styles.switchBtn}>
-      {isEnabled ? (
-        <Text style={styles.isFalse}>Metric</Text>
-      ) : (
-        <Text style={styles.isTrue}>Metric</Text>
-      )}
+      <UnitBtn
+        isActive={!isImperial}
+        title={'Metric'}
+        units={[
+          {shortUnit: 'mm', longUnit: 'Mimimiter'},
+          {shortUnit: 'cm', longUnit: 'Centimeter'},
+          {shortUnit: 'dm', longUnit: 'Decimetre'},
+        ]}
+        setSelectedUnit={setUnitMetric}
+        selectedUnit={unitMetric}
+      />
+
       <Switch
         trackColor={{false: COLORS.secondaryColor, true: COLORS.secondaryColor}}
-        thumbColor={isEnabled ? COLORS.primaryColor : COLORS.primaryColor}
-        ios_backgroundColor="#3e3e3e"
+        thumbColor={isImperial ? COLORS.primaryColor : COLORS.primaryColor}
+        ios_backgroundColor={COLORS.primaryColor}
         onValueChange={toggleSwitch}
-        value={isEnabled}
+        value={isImperial}
+        style={styles.switch}
       />
-      {isEnabled ? (
-        <Text style={styles.isTrue}>Imperial</Text>
-      ) : (
-        <Text style={styles.isFalse}>Imperial</Text>
-      )}
+      <UnitBtn
+        isActive={isImperial}
+        title={'Imperial'}
+        units={[
+          {shortUnit: 'inch', longUnit: 'Inch'},
+          {shortUnit: 'feet', longUnit: 'Feet'},
+        ]}
+        setSelectedUnit={setUnitImperial}
+        selectedUnit={unitImperial}
+      />
     </View>
   );
 };
@@ -32,6 +56,9 @@ const UnitSwitch = ({setIsEnabled, isEnabled}) => {
 export default UnitSwitch;
 
 const styles = StyleSheet.create({
+  switch: {
+    marginHorizontal: 20,
+  },
   switchBtn: {
     backgroundColor: COLORS.colorBackground,
     justifyContent: 'center',
@@ -42,10 +69,27 @@ const styles = StyleSheet.create({
     color: COLORS.secondaryColor,
     fontSize: 18,
     fontFamily: 'Roboto-italic',
+    textAlign: 'center',
   },
   isFalse: {
     color: COLORS.secondaryColor,
     fontSize: 18,
     fontFamily: 'Roboto-regular',
+    textAlign: 'center',
+  },
+  box: {
+    flexDirection: 'row',
+    height: 38,
+    width: 93,
+    backgroundColor: COLORS.primaryColor,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderRadius: 10,
+  },
+  text: {
+    paddingLeft: 12,
+    fontSize: 18,
+    fontFamily: 'Roboto-regular',
+    color: COLORS.secondaryColor,
   },
 });

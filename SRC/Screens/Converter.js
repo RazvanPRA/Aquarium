@@ -9,7 +9,7 @@ import {
   Button,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import InputMetric from './InputMetric';
+import UnitBtn from './UnitBtn';
 import {COLORS} from '../Colors/COLORS';
 
 const Converter = () => {
@@ -26,22 +26,6 @@ const Converter = () => {
                 title="OPEN"
                 onPress={() => refRBSheet.current.open()}
               />
-              <RBSheet
-                style={styles.btn}
-                ref={refRBSheet}
-                closeOnDragDown={true}
-                closeOnPressMask={true}
-                height={200}
-                customStyles={{
-                  wrapper: {
-                    backgroundColor: 'transparent',
-                  },
-                  draggableIcon: {
-                    backgroundColor: '#000',
-                  },
-                }}>
-                <InputMetric />
-              </RBSheet>
             </View>
             <TextInput
               value={number}
