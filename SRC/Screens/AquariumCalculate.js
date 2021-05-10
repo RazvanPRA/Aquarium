@@ -1,6 +1,13 @@
 import React, {useLayoutEffect, useState} from 'react';
-import {StyleSheet, View, Text, Keyboard, Pressable} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
+import {
+  TextInput,
+  StyleSheet,
+  View,
+  Text,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from 'react-native';
+
 import {COLORS} from '../Colors/COLORS';
 import UnitSwitch from '../Components/UnitSwitch';
 import GeometricImg from './GeometericImg';
@@ -20,42 +27,44 @@ const AquariumCalculate = ({route, navigation}) => {
   }, []);
 
   return (
-    <Pressable onPress={() => Keyboard.dismiss()} style={styles.body}>
-      <UnitSwitch
-        unitMetric={unitMetric}
-        unitImperial={unitImperial}
-        setUnitMetric={setUnitMetric}
-        setUnitImperial={setUnitImperial}
-        setIsImperial={setIsImperial}
-        isImperial={isImperial}
-      />
-      <View style={styles.img}>
-        <GeometricImg formulaImgSource={formulaImgSource}></GeometricImg>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.body}>
+        <UnitSwitch
+          unitMetric={unitMetric}
+          unitImperial={unitImperial}
+          setUnitMetric={setUnitMetric}
+          setUnitImperial={setUnitImperial}
+          setIsImperial={setIsImperial}
+          isImperial={isImperial}
+        />
+        <View style={styles.img}>
+          <GeometricImg formulaImgSource={formulaImgSource}></GeometricImg>
+        </View>
+        {dimensions.map((dimension) => {
+          return (
+            <View
+              removeClippedSubviews={true}
+              style={styles.view}
+              key={dimension}>
+              <TextInput
+                accessible={false}
+                contextMenuHidden={true}
+                keyboardType="numeric"
+                onChangeText={(text) => {
+                  setFunctionDimensions({
+                    ...functionDimensions,
+                    [dimension]: text,
+                  });
+                }}
+                style={styles.input}
+                maxLength={10}
+              />
+              <Text style={styles.text}>{dimension}</Text>
+            </View>
+          );
+        })}
       </View>
-      {dimensions.map((dimension) => {
-        return (
-          <View
-            removeClippedSubviews={true}
-            style={styles.view}
-            key={dimension}>
-            <TextInput
-              accessible={false}
-              contextMenuHidden={true}
-              keyboardType="numeric"
-              onChangeText={(text) => {
-                setFunctionDimensions({
-                  ...functionDimensions,
-                  [dimension]: text,
-                });
-              }}
-              style={styles.input}
-              maxLength={10}
-            />
-            <Text style={styles.text}>{dimension}</Text>
-          </View>
-        );
-      })}
-    </Pressable>
+    </TouchableWithoutFeedback>
   );
 };
 
