@@ -38,6 +38,7 @@ const UnitBtn = ({isActive, units, selectedUnit, setSelectedUnit, title}) => {
           {units &&
             units.map((item) => (
               <Pressable
+                key={item.longUnit}
                 onPress={() => {
                   setSelectedUnit(item.shortUnit);
                   bottomSheetRef.current.close();

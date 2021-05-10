@@ -144,7 +144,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primaryColor,
     width: 130,
     height: 20,
-    fontSize: 50,
+    fontSize: 15,
+    padding: 0,
     color: '#FFFFFF',
   },
   arrow: {

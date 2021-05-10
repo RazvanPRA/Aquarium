@@ -8,16 +8,18 @@ const AquariumLanding = ({navigation}) => {
   return (
     <View style={styles.body}>
       <View style={styles.btnTop}></View>
-      {geometricBtn.map((row) => (
-        <View style={styles.grpBtn}>
+      {geometricBtn.map((row, index) => (
+        <View style={styles.grpBtn} key={index}>
           {row.map((btn) => (
             <ImageBtn
+              key={btn.aquariumShape}
               navigation={navigation}
               onPress={() => {
                 navigation.navigate('AquariumCalculate', {
                   aquariumShape: btn.aquariumShape,
                   handleCalculate: btn.handleCalculate,
                   formulaImgSource: btn.formulaImgSource,
+                  dimensions: btn.dimensions,
                 });
               }}
               imgSource={btn.imgSource}
