@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Roboto-regular',
     textAlign: 'center',
+    marginBottom: 8,
   },
   activeTitle: {
     fontFamily: 'Roboto-italic',

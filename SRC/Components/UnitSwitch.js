@@ -37,6 +37,7 @@ const UnitSwitch = ({
         ios_backgroundColor={COLORS.primaryColor}
         onValueChange={toggleSwitch}
         value={isImperial}
+        style={styles.switch}
       />
       <UnitBtn
         isActive={isImperial}
@@ -48,41 +49,6 @@ const UnitSwitch = ({
         setSelectedUnit={setUnitImperial}
         selectedUnit={unitImperial}
       />
-      {/* <View>
-        {isImperial ? (
-          <Text style={styles.isFalse}>Imperial</Text>
-        ) : (
-          <Text style={styles.isTrue}>Imperial</Text>
-        )}
-        <Pressable
-          style={styles.box}
-          onPress={() => refRBSheetImperial.current.open()}>
-          <Text style={styles.text}>{unitImperial}</Text>
-          <Image source={require('../Img/AQM/ArrowDown.png')} />
-        </Pressable>
-        <RBSheet
-          style={styles.btn}
-          ref={refRBSheetImperial}
-          closeOnDragDown={true}
-          closeOnPressMask={true}
-          height={239}
-          customStyles={{
-            wrapper: {
-              backgroundColor: 'transparent',
-            },
-            draggableIcon: {
-              backgroundColor: COLORS.primaryColor,
-            },
-          }}>
-          <Unit
-            units={[
-              {shortUnit: 'inch', longUnit: 'Inch'},
-              {shortUnit: 'feet', longUnit: 'Feet'},
-            ]}
-            setUnit={setUnitImperial}
-          />
-        </RBSheet>
-      </View> */}
     </View>
   );
 };
@@ -90,6 +56,9 @@ const UnitSwitch = ({
 export default UnitSwitch;
 
 const styles = StyleSheet.create({
+  switch: {
+    marginHorizontal: 20,
+  },
   switchBtn: {
     backgroundColor: COLORS.colorBackground,
     justifyContent: 'center',

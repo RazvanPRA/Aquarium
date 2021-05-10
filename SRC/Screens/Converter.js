@@ -26,22 +26,6 @@ const Converter = () => {
                 title="OPEN"
                 onPress={() => refRBSheet.current.open()}
               />
-              {/* <RBSheet
-                style={styles.btn}
-                ref={refRBSheet}
-                closeOnDragDown={true}
-                closeOnPressMask={true}
-                height={200}
-                customStyles={{
-                  wrapper: {
-                    backgroundColor: 'transparent',
-                  },
-                  draggableIcon: {
-                    backgroundColor: '#000',
-                  },
-                }}>
-                <Unity />
-              </RBSheet> */}
             </View>
             <TextInput
               value={number}
