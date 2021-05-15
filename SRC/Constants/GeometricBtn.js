@@ -10,7 +10,7 @@ export const geometricBtn = [
           Number(functionDimensions.L) *
           Number(functionDimensions.W) *
           Number(functionDimensions.h);
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
 
@@ -25,7 +25,7 @@ export const geometricBtn = [
           (Math.sqrt(3) *
             Number(functionDimensions.P) ** 2 *
             Number(functionDimensions.h));
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
   ],
@@ -41,7 +41,7 @@ export const geometricBtn = [
           Math.sqrt(5 + 2 * Math.sqrt(5)) *
           Number(functionDimensions.L) ** 2 *
           Number(functionDimensions.h);
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
     {
@@ -54,7 +54,7 @@ export const geometricBtn = [
           Math.PI *
           Number(functionDimensions.L) ** 2 *
           (Number(functionDimensions.h) / 4);
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
   ],
@@ -78,7 +78,7 @@ export const geometricBtn = [
             Number(functionDimensions.Wm) *
             (alfa - Math.sin(alfa)) *
             Number(functionDimensions.W);
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
     {
@@ -91,7 +91,7 @@ export const geometricBtn = [
           (Math.sqrt(3) / 4) *
           Number(functionDimensions.W) ** 2 *
           Number(functionDimensions.h);
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
   ],
@@ -106,7 +106,7 @@ export const geometricBtn = [
           Math.PI *
           (Number(functionDimensions.L) / 2) ** 2 *
           Number(functionDimensions.h);
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
     {
@@ -120,7 +120,7 @@ export const geometricBtn = [
             (Number(functionDimensions.L) / 2) ** 2 *
             Number(functionDimensions.h)) /
           2;
-        return resultVolume.toPrecision(4);
+        return resultVolume;
       },
     },
   ],

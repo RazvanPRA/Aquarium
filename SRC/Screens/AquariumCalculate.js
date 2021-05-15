@@ -71,15 +71,35 @@ const AquariumCalculate = ({route, navigation}) => {
           <Pressable
             onPress={() => {
               setFieldsFull(true);
-
-              const result = equation(functionDimensions);
-              setCalculates(result);
+              if (isImperial === false) {
+                if (activeUnit === 'dm') {
+                  const result = equation(functionDimensions);
+                  setCalculates(result);
+                } else if (activeUnit === 'cm') {
+                  const result = equation(functionDimensions);
+                  setCalculates(result / 1000);
+                } else {
+                  const result = equation(functionDimensions);
+                  setCalculates(result / 1000000);
+                }
+              } else {
+                if (activeUnit === 'inch') {
+                  const result = equation(functionDimensions);
+                  setCalculates(result / 231);
+                } else {
+                  const result = equation(functionDimensions);
+                  setCalculates((result / 231) * 1728);
+                }
+              }
             }}>
             <Text style={styles.textR}>Result</Text>
           </Pressable>
           <View>
             {fieldsFull === true ? (
-              <CalculateResult calculates={calculates} />
+              <CalculateResult
+                calculates={calculates}
+                isImperial={isImperial}
+              />
             ) : (
               <Text style={styles.textNF}>
                 Please fill all necessary fields
