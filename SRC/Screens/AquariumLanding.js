@@ -20,6 +20,7 @@ const AquariumLanding = ({navigation}) => {
                   handleCalculate: btn.handleCalculate,
                   formulaImgSource: btn.formulaImgSource,
                   dimensions: btn.dimensions,
+                  equation: btn.equation,
                 });
               }}
               imgSource={btn.imgSource}

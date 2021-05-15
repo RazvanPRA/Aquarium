@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {StyleSheet, Text, View, Switch, Pressable, Image} from 'react-native';
-import RBSheet from 'react-native-raw-bottom-sheet';
+import {StyleSheet, View, Switch} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
 import UnitBtn from '../Screens/UnitBtn';
 

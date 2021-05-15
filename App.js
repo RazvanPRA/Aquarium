@@ -11,7 +11,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import AquariumCalculate from './SRC/Screens/AquariumCalculate';
 import AppTabs from './SRC/Screens/AppTabs';
-import {StyleSheet, Text, View, Pressable} from 'react-native';
 import CustomBtn from './SRC/Components/CustomBtn';
 import {COLORS} from './SRC/Colors/COLORS';
 
@@ -37,6 +36,8 @@ const App: () => React$Node = () => {
             headerStyle: {
               backgroundColor: COLORS.colorBackground,
               height: 92,
+              borderBottomColor: COLORS.primaryColor,
+              borderBottomWidth: 1,
             },
             headerTitleStyle: {
               fontSize: 18,
