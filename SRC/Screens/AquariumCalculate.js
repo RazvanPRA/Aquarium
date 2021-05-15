@@ -30,7 +30,6 @@ const AquariumCalculate = ({route, navigation}) => {
     });
   }, []);
   const [calculates, setCalculates] = useState(0);
-  const [calculatesTest, setCalculatesTest] = useState(0);
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.body}>
