@@ -10,11 +10,15 @@ const UnitSwitch = ({
   unitImperial,
   setUnitMetric,
   setUnitImperial,
+  setShowError,
+  setCalculates,
 }) => {
   const refRBSheetMetric = useRef();
   const refRBSheetImperial = useRef();
   const toggleSwitch = () => {
     setIsImperial(!isImperial);
+    setShowError(false);
+    setCalculates(null);
   };
   return (
     <View style={styles.switchBtn}>

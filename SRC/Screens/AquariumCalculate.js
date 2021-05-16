@@ -36,6 +36,8 @@ const AquariumCalculate = ({route, navigation}) => {
       <SafeAreaView style={styles.body}>
         <ScrollView>
           <UnitSwitch
+            setCalculates={setCalculates}
+            setShowError={setShowError}
             unitMetric={unitMetric}
             unitImperial={unitImperial}
             setUnitMetric={setUnitMetric}
