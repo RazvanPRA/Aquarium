@@ -16,20 +16,21 @@ import UnitSwitch from '../Components/UnitSwitch';
 import GeometricImg from './GeometericImg';
 
 const AquariumCalculate = ({route, navigation}) => {
-  const [fieldsFull, setFieldsFull] = useState(false);
   const [functionDimensions, setFunctionDimensions] = useState({});
   const [unitMetric, setUnitMetric] = useState('cm');
   const [unitImperial, setUnitImperial] = useState('inch');
   const [isImperial, setIsImperial] = useState(false);
   const {aquariumShape, formulaImgSource, dimensions, equation} = route.params;
-
+  const [showError, setShowError] = useState(false);
+  const [calculates, setCalculates] = useState(null);
   const activeUnit = isImperial ? unitImperial : unitMetric;
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: aquariumShape,
     });
   }, []);
-  const [calculates, setCalculates] = useState(0);
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={styles.body}>
@@ -60,6 +61,8 @@ const AquariumCalculate = ({route, navigation}) => {
                       ...functionDimensions,
                       [dimension]: text,
                     });
+                    setCalculates(null);
+                    setShowError(false);
                   }}
                   style={styles.input}
                   maxLength={10}
@@ -70,24 +73,23 @@ const AquariumCalculate = ({route, navigation}) => {
           })}
           <Pressable
             onPress={() => {
-              setFieldsFull(true);
               if (isImperial === false) {
                 if (activeUnit === 'dm') {
-                  const result = equation(functionDimensions);
+                  const result = equation(functionDimensions, setShowError);
                   setCalculates(result);
                 } else if (activeUnit === 'cm') {
-                  const result = equation(functionDimensions);
+                  const result = equation(functionDimensions, setShowError);
                   setCalculates(result / 1000);
                 } else {
-                  const result = equation(functionDimensions);
+                  const result = equation(functionDimensions, setShowError);
                   setCalculates(result / 1000000);
                 }
               } else {
                 if (activeUnit === 'inch') {
-                  const result = equation(functionDimensions);
+                  const result = equation(functionDimensions, setShowError);
                   setCalculates(result / 231);
                 } else {
-                  const result = equation(functionDimensions);
+                  const result = equation(functionDimensions, setShowError);
                   setCalculates((result / 231) * 1728);
                 }
               }
@@ -95,16 +97,11 @@ const AquariumCalculate = ({route, navigation}) => {
             <Text style={styles.textR}>Result</Text>
           </Pressable>
           <View>
-            {fieldsFull === true ? (
-              <CalculateResult
-                calculates={calculates}
-                isImperial={isImperial}
-              />
-            ) : (
-              <Text style={styles.textNF}>
-                Please fill all necessary fields
-              </Text>
-            )}
+            <CalculateResult
+              showError={showError}
+              calculates={calculates}
+              isImperial={isImperial}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -122,13 +119,6 @@ const styles = StyleSheet.create({
     fontSize: 26,
     padding: 0,
     marginTop: 33,
-  },
-  textNF: {
-    color: COLORS.warning,
-    textAlign: 'center',
-    marginTop: 47,
-    fontSize: 22,
-    fontFamily: 'Roboto-regular',
   },
 
   input: {
