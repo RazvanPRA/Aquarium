@@ -6,15 +6,9 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/Cube.png'),
       dimensions: ['L', 'W', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (
-          !!functionDimensions.L &&
-          !!functionDimensions.W &&
-          !!functionDimensions.h
-        ) {
-          const resultVolume =
-            Number(functionDimensions.L) *
-            Number(functionDimensions.W) *
-            Number(functionDimensions.h);
+        const {L, W, h} = functionDimensions
+        if (!!L && !!W && !!h) {
+          const resultVolume = Number(L) * Number(W) * Number(h);
           setShowError(false);
           return resultVolume;
         } else {
@@ -28,14 +22,15 @@ export const geometricBtn = [
       aquariumShape: 'Hexagon',
       imgSource: require('../Img/Menu/HexagonCubeSelected.png'),
       formulaImgSource: require('../Img/AQM/HexagonalCube.png'),
-      dimensions: ['P', 'h'],
+      dimensions: ['W', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (!!functionDimensions.P && !!functionDimensions.h) {
+        const {W, h} = functionDimensions
+        if (!!W && !!h) {
           const resultVolume =
             (3 / 2) *
             (Math.sqrt(3) *
-              Number(functionDimensions.P) ** 2 *
-              Number(functionDimensions.h));
+              Number(W) ** 2 *
+              Number(h));
           setShowError(false);
           return resultVolume;
         } else {
@@ -52,12 +47,13 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/PentagonalCube.png'),
       dimensions: ['L', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (!!functionDimensions.L && !!functionDimensions.h) {
+        const {L, h} = functionDimensions
+        if (!!L && !!h) {
           const resultVolume =
             (1 / 4) *
             Math.sqrt(5 + 2 * Math.sqrt(5)) *
-            Number(functionDimensions.L) ** 2 *
-            Number(functionDimensions.h);
+            Number(L) ** 2 *
+            Number(h);
           setShowError(false);
           return resultVolume;
         } else {
@@ -72,11 +68,12 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/CornerCube.png'),
       dimensions: ['L', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (!!functionDimensions.L && !!functionDimensions.h) {
+        const {L, h} = fu
+        if (!!L && !!h) {
           const resultVolume =
             Math.PI *
-            Number(functionDimensions.L) ** 2 *
-            (Number(functionDimensions.h) / 4);
+            Number(L) ** 2 *
+            (Number(h) / 4);
           setShowError(false);
           return resultVolume;
         } else {
@@ -93,25 +90,26 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/BowFrontCube.png'),
       dimensions: ['L', 'W', 'Wm', 'h'],
       equation: (functionDimensions, setShowError) => {
+        const {L, W, Wm, h} = functionDimensions
         if (
-          !!functionDimensions.L &&
-          !!functionDimensions.W &&
-          !!functionDimensions.Wm &&
-          !!functionDimensions.h
+          !!L &&
+          !!W &&
+          !!Wm &&
+          !!h
         ) {
           const beta = Math.tan(
-            (0.5 * Number(functionDimensions.L)) /
-              (Number(functionDimensions.Wm) - Number(functionDimensions.W)),
+            (0.5 * Number(L)) /
+              (Number(Wm) - Number(W)),
           );
           const alfa = 2 * Math.PI - 4 * beta;
           const resultVolume =
-            Number(functionDimensions.h) *
-              Number(functionDimensions.W) *
-              Number(functionDimensions.L) +
+            Number(h) *
+              Number(W) *
+              Number(L) +
             0.5 *
-              Number(functionDimensions.Wm) *
+              Number(Wm) *
               (alfa - Math.sin(alfa)) *
-              Number(functionDimensions.W);
+              Number(W);
           setShowError(false);
           return resultVolume;
         } else {
@@ -126,13 +124,14 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/TrigonaCube.png'),
       dimensions: ['W', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (!!functionDimensions.W && !!functionDimensions.h) {
+        const {W, h} = functionDimensions
+        if (!!W && !!h) {
           const resultVolume =
             (Math.sqrt(3) / 4) *
-            Number(functionDimensions.W) ** 2 *
-            Number(functionDimensions.h);
+            Number(W) ** 2 *
+            Number(h);
           setShowError(false);
-          return resultVolume;
+          return resultVolume; 
         } else {
           setShowError(true);
           return null;
@@ -147,11 +146,12 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/Cylinder.png'),
       dimensions: ['L', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (!!functionDimensions.L && !!functionDimensions.h) {
+        const {L, h} = functionDimensions
+        if (!!L && !!h) {
           const resultVolume =
             Math.PI *
-            (Number(functionDimensions.L) / 2) ** 2 *
-            Number(functionDimensions.h);
+            (Number(L) / 2) ** 2 *
+            Number(h);
           setShowError(false);
           return resultVolume;
         } else {
@@ -166,11 +166,12 @@ export const geometricBtn = [
       formulaImgSource: require('../Img/AQM/HalfCylinder.png'),
       dimensions: ['L', 'h'],
       equation: (functionDimensions, setShowError) => {
-        if (!!functionDimensions.L && !!functionDimensions.h) {
+        const {L, h} = functionDimensions
+        if (!!L && !!h) {
           const resultVolume =
             (Math.PI *
-              (Number(functionDimensions.L) / 2) ** 2 *
-              Number(functionDimensions.h)) /
+              (Number(L) / 2) ** 2 *
+              Number(h)) /
             2;
 
           setShowError(false);

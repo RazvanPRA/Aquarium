@@ -32,6 +32,8 @@ const UnitSwitch = ({
         ]}
         setSelectedUnit={setUnitMetric}
         selectedUnit={unitMetric}
+        setShowError={setShowError}
+        setCalculates={setCalculates}
       />
 
       <Switch
@@ -51,6 +53,8 @@ const UnitSwitch = ({
         ]}
         setSelectedUnit={setUnitImperial}
         selectedUnit={unitImperial}
+        setShowError={setShowError}
+        setCalculates={setCalculates}
       />
     </View>
   );

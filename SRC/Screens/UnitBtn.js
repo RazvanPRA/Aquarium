@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Pressable, Image} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
-const UnitBtn = ({isActive, units, selectedUnit, setSelectedUnit, title}) => {
+const UnitBtn = ({isActive, units, selectedUnit, setSelectedUnit, title, setShowError, setCalculates}) => {
   const bottomSheetRef = useRef();
   return (
     <View style={styles.container}>
@@ -32,6 +32,8 @@ const UnitBtn = ({isActive, units, selectedUnit, setSelectedUnit, title}) => {
             backgroundColor: COLORS.primaryColor,
             borderTopEndRadius: 30,
             borderTopStartRadius: 30,
+            borderTopColor: '#000000',
+            borderWidth: 5
           },
         }}>
         <View style={styles.bottomSheetContainer}>
@@ -42,6 +44,8 @@ const UnitBtn = ({isActive, units, selectedUnit, setSelectedUnit, title}) => {
                 onPress={() => {
                   setSelectedUnit(item.shortUnit);
                   bottomSheetRef.current.close();
+                  setShowError(false)
+                  setCalculates(null)
                 }}>
                 <Text style={styles.input}>{item.longUnit}</Text>
               </Pressable>
