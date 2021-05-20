@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {StyleSheet, Text, View, Switch, Pressable, Image} from 'react-native';
-import RBSheet from 'react-native-raw-bottom-sheet';
+import {StyleSheet, View, Switch} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
 import UnitBtn from '../Screens/UnitBtn';
 
@@ -11,11 +10,15 @@ const UnitSwitch = ({
   unitImperial,
   setUnitMetric,
   setUnitImperial,
+  setShowError,
+  setCalculates,
 }) => {
   const refRBSheetMetric = useRef();
   const refRBSheetImperial = useRef();
   const toggleSwitch = () => {
     setIsImperial(!isImperial);
+    setShowError(false);
+    setCalculates(null);
   };
   return (
     <View style={styles.switchBtn}>
@@ -29,6 +32,8 @@ const UnitSwitch = ({
         ]}
         setSelectedUnit={setUnitMetric}
         selectedUnit={unitMetric}
+        setShowError={setShowError}
+        setCalculates={setCalculates}
       />
 
       <Switch
@@ -48,6 +53,8 @@ const UnitSwitch = ({
         ]}
         setSelectedUnit={setUnitImperial}
         selectedUnit={unitImperial}
+        setShowError={setShowError}
+        setCalculates={setCalculates}
       />
     </View>
   );
