@@ -1,4 +1,4 @@
-export const geometricBtn = [
+ const geometricBtn = [
   [
     {
       aquariumShape: 'Cube',
@@ -184,3 +184,4 @@ export const geometricBtn = [
     },
   ],
 ];
+export default geometricBtn;

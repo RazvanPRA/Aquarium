@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import {StyleSheet, View, Switch} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
 import UnitBtn from '../Screens/UnitBtn';
