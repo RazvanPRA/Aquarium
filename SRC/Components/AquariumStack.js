@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import AquariumLanding from './AquariumLanding';
+import AquariumLanding from '../Screens/AquariumLanding';
 
 const Stack = createStackNavigator();
 const AquariumStack = () => {

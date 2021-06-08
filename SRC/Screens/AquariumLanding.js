@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import ImageBtn from './ImageBtn';
+import ImageBtn from '../Components/ImageBtn';
 import geometricBtn from '../Constants/GeometricBtn';
 import {COLORS} from '../Colors/COLORS';
 
@@ -21,7 +21,6 @@ const AquariumLanding = ({navigation}) => {
                   formulaImgSource: btn.formulaImgSource,
                   dimensions: btn.dimensions,
                   equation: btn.equation,
-                 
                 });
               }}
               imgSource={btn.imgSource}
