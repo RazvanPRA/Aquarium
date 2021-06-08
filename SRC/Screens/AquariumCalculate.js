@@ -13,7 +13,7 @@ import {
 import CalculateResult from '../Components/CalculateResult';
 import {COLORS} from '../Colors/COLORS';
 import UnitSwitch from '../Components/UnitSwitch';
-import GeometricImg from './GeometericImg';
+import GeometricImg from '../Components/GeometericImg';
 
 const AquariumCalculate = ({route, navigation}) => {
   const [functionDimensions, setFunctionDimensions] = useState({});
@@ -24,7 +24,7 @@ const AquariumCalculate = ({route, navigation}) => {
   const [showError, setShowError] = useState(false);
   const [calculates, setCalculates] = useState(null);
   const activeUnit = isImperial ? unitImperial : unitMetric;
-  
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: aquariumShape,
@@ -75,7 +75,6 @@ const AquariumCalculate = ({route, navigation}) => {
           })}
           <Pressable
             onPress={() => {
-            
               if (isImperial === false) {
                 if (activeUnit === 'dm') {
                   const result = equation(functionDimensions, setShowError);

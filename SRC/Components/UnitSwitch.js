@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {StyleSheet, View, Switch} from 'react-native';
 import {COLORS} from '../Colors/COLORS';
-import UnitBtn from '../Screens/UnitBtn';
+import UnitBtn from './UnitBtn';
 
 const UnitSwitch = ({
   isImperial,
