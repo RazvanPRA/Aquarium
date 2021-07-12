@@ -8,12 +8,12 @@ const Converter = () => {
   // const refRBSheet = useRef();
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>COMING SOON</Text>
-      {/* <ScrollView>
+      {/* <Text style={styles.text}>COMING SOON</Text> */}
+      <ScrollView>
         {convertorMap.map((item) => {
           return <UnitConvertBtn item={item} />;
         })}
-      </ScrollView> */}
+      </ScrollView>
     </View>
   );
 };
@@ -22,7 +22,7 @@ export default Converter;
 
 const styles = StyleSheet.create({
   body: {
-    flex: 1,
+    flex: 2,
     backgroundColor: COLORS.colorBackground,
     alignItems: 'center',
     justifyContent: 'center',
